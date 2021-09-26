@@ -10,20 +10,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Components App',
       // debugShowMaterialGrid: true,
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-            title: const Center(
-          child: Text(
-            'Components',
-            textAlign: TextAlign.center,
-          ),
-        )),
-        body: const HomePageTemp(),
-      ),
+      home: HomePageTemp(),
     );
   }
 }
