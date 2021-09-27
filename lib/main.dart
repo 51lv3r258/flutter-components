@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 // * My imports
-import 'src/pages/home_temp.dart';
+import 'src/pages/home_page.dart';
+// import 'src/pages/home_temp.dart';
 
 void main() => runApp(const MyApp());
 
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'Components App',
       // debugShowMaterialGrid: true,
       debugShowCheckedModeBanner: false,
-      home: HomePageTemp(),
+      home: HomePage(),
     );
   }
 }
