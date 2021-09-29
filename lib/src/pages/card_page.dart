@@ -11,7 +11,13 @@ class CardPage extends StatelessWidget {
       ),
       body: ListView(
         padding: const EdgeInsets.all(10),
-        children: <Widget>[_card1()],
+        children: <Widget>[
+          _card1(),
+          const SizedBox(
+            height: 30.0,
+          ),
+          _card2()
+        ],
       ),
     );
   }
@@ -37,6 +43,31 @@ class CardPage extends StatelessWidget {
               TextButton(onPressed: () {}, child: const Text('Ok')),
               const SizedBox(width: 10),
             ],
+          )
+        ],
+      ),
+    );
+  }
+
+  _card2() {
+    return Card(
+      child: Column(
+        children: <Widget>[
+          const FadeInImage(
+            image: NetworkImage(
+                'https://i.pinimg.com/originals/ba/ee/ac/baeeacb7ad04d4c791a35fae003a6780.jpg'),
+            placeholder: AssetImage('assets/jar-loading.gif'),
+            fadeInDuration: Duration(milliseconds: 200),
+            height: 300,
+            fit: BoxFit.cover,
+          ),
+          /* const Image(
+            image: NetworkImage(
+                'https://i.pinimg.com/originals/ba/ee/ac/baeeacb7ad04d4c791a35fae003a6780.jpg'),
+          ), */
+          Container(
+            child: const Text('Esta es una descripción de la imagen'),
+            padding: const EdgeInsets.all(20),
           )
         ],
       ),
