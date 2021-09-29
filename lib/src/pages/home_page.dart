@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../providers/menu_provider.dart';
 import '../utils/icon_string_util.dart';
-import 'alert_page.dart';
+/* import 'alert_page.dart'; */
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -38,9 +38,10 @@ class HomePage extends StatelessWidget {
           color: Colors.blue,
         ),
         onTap: () {
-          final route =
+          /* final route =
               MaterialPageRoute(builder: (context) => const AlertPage());
-          Navigator.push(context, route);
+          Navigator.push(context, route); */
+          Navigator.pushNamed(context, opt['route']);
         },
       );
 
