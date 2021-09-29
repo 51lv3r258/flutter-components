@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../providers/menu_provider.dart';
 import '../utils/icon_string_util.dart';
+import 'alert_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -21,11 +22,11 @@ class HomePage extends StatelessWidget {
         future: menuProvider.loadData(),
         initialData: const [],
         builder: (context, AsyncSnapshot<List<dynamic>> snapshot) => ListView(
-              children: _listItems(snapshot.data),
+              children: _listItems(snapshot.data, context),
             ));
   }
 
-  List<Widget> _listItems(List<dynamic>? data) {
+  List<Widget> _listItems(List<dynamic>? data, BuildContext context) {
     final List<Widget> options = [];
 
     for (var opt in (data ?? [])) {
@@ -36,7 +37,11 @@ class HomePage extends StatelessWidget {
           Icons.keyboard_arrow_right_outlined,
           color: Colors.blue,
         ),
-        onTap: () => {},
+        onTap: () {
+          final route =
+              MaterialPageRoute(builder: (context) => const AlertPage());
+          Navigator.push(context, route);
+        },
       );
 
       options
