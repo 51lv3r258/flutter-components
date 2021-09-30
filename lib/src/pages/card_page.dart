@@ -24,6 +24,10 @@ class CardPage extends StatelessWidget {
 
   Widget _card1() {
     return Card(
+      elevation: 10,
+      shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20) //* Border a toda la card
+          ),
       child: Column(
         children: <Widget>[
           const ListTile(
@@ -51,6 +55,9 @@ class CardPage extends StatelessWidget {
 
   _card2() {
     return Card(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+      clipBehavior:
+          Clip.antiAlias, // * Evita que los elementos se salgan de la card
       child: Column(
         children: <Widget>[
           const FadeInImage(
