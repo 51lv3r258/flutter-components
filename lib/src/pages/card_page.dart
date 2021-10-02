@@ -16,7 +16,11 @@ class CardPage extends StatelessWidget {
           const SizedBox(
             height: 30.0,
           ),
-          _card2()
+          _card2(),
+          const SizedBox(
+            height: 30.0,
+          ),
+          _card2WithContainer(),
         ],
       ),
     );
@@ -79,5 +83,42 @@ class CardPage extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  _card2WithContainer() {
+    final _card = Column(
+      children: <Widget>[
+        const FadeInImage(
+          image: NetworkImage(
+              'https://i.pinimg.com/originals/ba/ee/ac/baeeacb7ad04d4c791a35fae003a6780.jpg'),
+          placeholder: AssetImage('assets/jar-loading.gif'),
+          fadeInDuration: Duration(milliseconds: 200),
+          height: 300,
+          fit: BoxFit.cover,
+        ),
+        Container(
+          child: const Text('Otra descripción de la misma imagen'),
+          padding: const EdgeInsets.all(20),
+        )
+      ],
+    );
+
+    final _borderContainer = BorderRadius.circular(30);
+
+    return Container(
+        decoration: BoxDecoration(
+            borderRadius: _borderContainer,
+            color: Colors.white,
+            boxShadow: const <BoxShadow>[
+              BoxShadow(
+                  color: Colors.black26,
+                  blurRadius: 10,
+                  spreadRadius: 2,
+                  offset: Offset(2, 10)),
+            ]),
+        child: ClipRRect(
+          borderRadius: _borderContainer,
+          child: _card,
+        ));
   }
 }
