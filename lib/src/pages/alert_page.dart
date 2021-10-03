@@ -32,11 +32,14 @@ class AlertPage extends StatelessWidget {
         return AlertDialog(
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
-          title: const Text('Titulo'),
+          title: const TextWhite(text: 'Titulo'),
+          backgroundColor: Colors.blue,
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: const <Widget>[
-              Text('Este es el contenido de la caja de la alerta'),
+              TextWhite(
+                text: 'Este es el contenido de la caja de la alerta',
+              ),
               FlutterLogo(
                 size: 100,
               )
@@ -44,14 +47,33 @@ class AlertPage extends StatelessWidget {
           ),
           actions: <Widget>[
             TextButton(
+                style: TextButton.styleFrom(primary: Colors.orange.shade200),
                 onPressed: () => Navigator.of(context).pop(),
                 child: const Text('Cancelar')),
             TextButton(
+                style: TextButton.styleFrom(primary: Colors.white),
                 onPressed: () => Navigator.of(context).pop(),
                 child: const Text('Ok')),
           ],
         );
       },
+    );
+  }
+}
+
+class TextWhite extends StatelessWidget {
+  const TextWhite({
+    Key? key,
+    required this.text,
+  }) : super(key: key);
+
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      style: const TextStyle(color: Colors.white),
     );
   }
 }
