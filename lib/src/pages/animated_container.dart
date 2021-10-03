@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:math';
 
 class AnimatedContainerPage extends StatefulWidget {
-  AnimatedContainerPage({Key? key}) : super(key: key);
+  const AnimatedContainerPage({Key? key}) : super(key: key);
 
   @override
   _AnimatedContainerPageState createState() => _AnimatedContainerPageState();
