@@ -8,6 +8,7 @@ final _icons = <String, IconData>{
   'donut_large': Icons.donut_large,
   'input': Icons.input_outlined,
   'tune': Icons.tune_outlined,
+  'list': Icons.list_outlined,
 };
 
 Icon getIcon(String iconName, [Color? color]) {
