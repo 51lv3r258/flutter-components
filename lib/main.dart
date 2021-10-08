@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
+import 'src/pages/alert_page.dart';
 // * My imports
 import 'src/routes/routes.dart';
-import 'src/pages/alert_page.dart';
 
 void main() => runApp(const MyApp());
 

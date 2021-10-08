@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart' show WidgetBuilder, BuildContext;
 
-// * My imports
-import '../pages/home_page.dart';
 import '../pages/alert_page.dart';
+import '../pages/animated_container.dart';
 import '../pages/avatar_page.dart';
 import '../pages/card_page.dart';
-import '../pages/animated_container.dart';
+import '../pages/home_page.dart';
 import '../pages/input_page.dart';
-import '../pages/slider_page.dart';
 import '../pages/listview_page.dart';
+import '../pages/slider_page.dart';
 
 Map<String, WidgetBuilder> getAppRoutes() {
   return <String, WidgetBuilder>{
