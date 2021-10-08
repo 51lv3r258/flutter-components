@@ -14,6 +14,14 @@ class _InputPageState extends State<InputPage> {
   bool _passwordHidden = true;
   String _date = '';
 
+  final List<String> _powers = [
+    'Volar',
+    'Rayos X',
+    'Aliento Helado',
+    'Super Fuerza',
+  ];
+  String _selectedOption = 'Volar';
+
   final TextEditingController _inputFieldDateCtrl = TextEditingController();
 
   @override
@@ -32,6 +40,8 @@ class _InputPageState extends State<InputPage> {
           _createPassword(),
           const Divider(),
           _createDate(context),
+          const Divider(),
+          _createDropdown(),
           const Divider(),
           _createPerson(),
         ],
@@ -132,10 +142,48 @@ class _InputPageState extends State<InputPage> {
     }
   }
 
+  List<DropdownMenuItem<String>> getOptionsDropdown() {
+    List<DropdownMenuItem<String>> list = [];
+
+    for (var power in _powers) {
+      list.add(DropdownMenuItem(
+        child: Text(power),
+        value: power,
+        // alignment: Alignment.centerRight,
+      ));
+    }
+
+    return list;
+  }
+
+  Widget _createDropdown() {
+    return Row(children: <Widget>[
+      const Icon(
+        Icons.select_all,
+        color: Colors.black54,
+      ),
+      const SizedBox(width: 20),
+      Expanded(
+        child: DropdownButton(
+          isExpanded: true,
+          value: _selectedOption,
+          items: getOptionsDropdown(),
+          onChanged: (opt) {
+            setState(() {
+              _selectedOption = opt.toString();
+            });
+          },
+        ),
+      ),
+      const SizedBox(width: 5)
+    ]);
+  }
+
   Widget _createPerson() {
     return ListTile(
       title: Text('Mi nombre es $_name'),
       subtitle: Text('Mi correo es $_email'),
+      trailing: Text(_selectedOption),
     );
   }
 }
